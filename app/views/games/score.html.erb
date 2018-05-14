@@ -1,0 +1,7 @@
+<h1>Result</h1>
+<div class=container>
+  <p>Sorry but <strong><%= @score %></strong> can't be built out of LETTERS</p>
+  <p>Sorry but <strong><%= @score %></strong> does not seem to be a valid English word...</p>
+  <p><strong>Congratulations!</strong> <%= @score %> is a valid English word!</p>
+  <%= link_to "Play again", new_path %>
+</div>
