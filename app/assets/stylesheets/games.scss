@@ -56,4 +56,7 @@ input {
 
 a {
   text-decoration: none;
+  &:visited {
+    color: #3A99D9;
+  }
 }

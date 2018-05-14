@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class GamesController < ApplicationController
   def new
      # instance variable storing these random letters from the alphabet.
@@ -6,5 +9,14 @@ class GamesController < ApplicationController
 
   def score
     @score = params[:word]
+    if english_word?(@score) == false
+      @answer = "not_valid_english"
+    end
+  end
+
+  def english_word?(word)
+    response = open("https://wagon-dictionary.herokuapp.com/#{word}")
+    json = JSON.parse(response.read)
+    return json['found']
   end
 end
