@@ -3,9 +3,9 @@
   <% if @answer == "not_in_letters" %>
     <p>Sorry but <strong><%= @score %></strong> can't be built out of LETTERS</p>
   <% elsif @answer == "not_valid_english" %>
-    <p>Sorry but <strong><%= @score %></strong> does not seem to be a valid English word...</p>
+    <p>Sorry but <strong><%= @score %></strong> does not seem to be a valid English word... 😪</p>
   <% else %>
-    <p><strong>Congratulations!</strong> <%= @score %> is a valid English word!</p>
+    <p><strong>Congratulations!</strong> <%= @score %> is a valid English word 🇬🇧!</p>
   <% end %>
   <%= link_to "Play again", new_path %>
 </div>
