@@ -14,6 +14,10 @@ class GamesController < ApplicationController
     end
   end
 
+  def included?(word, grid)
+    guess.chars.all? { |letter| guess.count(letter) <= grid.count(letter) }
+  end
+
   def english_word?(word)
     response = open("https://wagon-dictionary.herokuapp.com/#{word}")
     json = JSON.parse(response.read)
